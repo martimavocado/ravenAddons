@@ -41,4 +41,6 @@ object InventoryUtils {
             this[slot] = stack
         }
     }
+
+    fun getPlayerArmor(): Array<ItemStack?> = PlayerUtils.getPlayer()?.inventory?.armorInventory?.copyOf() ?: arrayOf()
 }

@@ -5,4 +5,4 @@ import net.minecraftforge.fml.common.eventhandler.Cancelable
 import net.minecraftforge.fml.common.eventhandler.Event
 
 @Cancelable
-class ToolTipEvent(val item: ItemStack, var tooltip: MutableList<String>) : Event()
+class ToolTipEvent(val stack: ItemStack, var tooltip: MutableList<String>) : Event()
