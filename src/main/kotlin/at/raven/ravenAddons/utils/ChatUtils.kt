@@ -4,7 +4,7 @@ import at.raven.ravenAddons.config.ravenAddonsConfig
 import at.raven.ravenAddons.data.commands.CommandCategory
 import at.raven.ravenAddons.event.CommandRegistrationEvent
 import at.raven.ravenAddons.event.chat.ChatReceivedEvent
-import at.raven.ravenAddons.loadmodule.LoadModule
+import at.raven.ravenAddons.modules.loadModule.LoadModule
 import net.minecraft.client.Minecraft
 import net.minecraft.event.ClickEvent
 import net.minecraft.event.HoverEvent

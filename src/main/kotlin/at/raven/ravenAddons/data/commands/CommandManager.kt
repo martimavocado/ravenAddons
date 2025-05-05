@@ -1,7 +1,7 @@
 package at.raven.ravenAddons.data.commands
 
 import at.raven.ravenAddons.config.ConfigManager
-import at.raven.ravenAddons.loadmodule.LoadModule
+import at.raven.ravenAddons.modules.loadModule.LoadModule
 import at.raven.ravenAddons.utils.ChatUtils
 import net.minecraft.event.ClickEvent
 import net.minecraft.event.HoverEvent

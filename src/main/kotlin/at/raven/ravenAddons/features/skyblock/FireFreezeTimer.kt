@@ -9,7 +9,7 @@ import at.raven.ravenAddons.event.CommandRegistrationEvent
 import at.raven.ravenAddons.event.ConfigFixEvent
 import at.raven.ravenAddons.event.hypixel.HypixelServerChangeEvent
 import at.raven.ravenAddons.event.render.WorldRenderEvent
-import at.raven.ravenAddons.loadmodule.LoadModule
+import at.raven.ravenAddons.modules.loadModule.LoadModule
 import at.raven.ravenAddons.ravenAddons
 import at.raven.ravenAddons.utils.ChatUtils
 import at.raven.ravenAddons.utils.ClipboardUtils

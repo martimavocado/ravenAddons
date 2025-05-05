@@ -2,7 +2,7 @@ package at.raven.ravenAddons.commands
 
 import at.raven.ravenAddons.data.commands.CommandCategory
 import at.raven.ravenAddons.event.CommandRegistrationEvent
-import at.raven.ravenAddons.loadmodule.LoadModule
+import at.raven.ravenAddons.modules.loadModule.LoadModule
 import at.raven.ravenAddons.utils.ChatUtils
 import net.minecraft.client.Minecraft
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent

@@ -2,7 +2,7 @@ package at.raven.ravenAddons.utils
 
 import at.raven.ravenAddons.event.CommandRegistrationEvent
 import at.raven.ravenAddons.event.ConfigFixEvent
-import at.raven.ravenAddons.loadmodule.LoadModule
+import at.raven.ravenAddons.modules.loadModule.LoadModule
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent
 
 @LoadModule

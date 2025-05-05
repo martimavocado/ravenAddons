@@ -11,7 +11,7 @@ import at.raven.ravenAddons.features.skyblock.dodgelist.DodgeListChatComponents.
 import at.raven.ravenAddons.features.skyblock.dodgelist.DodgeListChatComponents.getRemoveComponent
 import at.raven.ravenAddons.features.skyblock.dodgelist.DodgeListChatComponents.prefixComponent
 import at.raven.ravenAddons.features.skyblock.dodgelist.subcommands.*
-import at.raven.ravenAddons.loadmodule.LoadModule
+import at.raven.ravenAddons.modules.loadModule.LoadModule
 import at.raven.ravenAddons.ravenAddons
 import at.raven.ravenAddons.utils.*
 import at.raven.ravenAddons.utils.ChatUtils.add

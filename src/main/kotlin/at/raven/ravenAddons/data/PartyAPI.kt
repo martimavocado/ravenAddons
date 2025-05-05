@@ -4,7 +4,7 @@ import at.raven.ravenAddons.data.PartyAPI.PartyRole.Companion.getRole
 import at.raven.ravenAddons.event.PartyUpdateEvent
 import at.raven.ravenAddons.event.hypixel.HypixelPartyEvent
 import at.raven.ravenAddons.event.managers.HypixelEvents
-import at.raven.ravenAddons.loadmodule.LoadModule
+import at.raven.ravenAddons.modules.loadModule.LoadModule
 import at.raven.ravenAddons.ravenAddons
 import at.raven.ravenAddons.utils.PlayerUtils
 import at.raven.ravenAddons.utils.PlayerUtils.getPlayer

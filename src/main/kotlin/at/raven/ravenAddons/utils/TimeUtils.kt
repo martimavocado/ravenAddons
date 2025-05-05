@@ -1,6 +1,6 @@
 package at.raven.ravenAddons.utils
 
-import at.raven.ravenAddons.loadmodule.LoadModule
+import at.raven.ravenAddons.modules.loadModule.LoadModule
 import at.raven.ravenAddons.utils.ServerTimeMark.Companion.inWholeTicks
 import at.raven.ravenAddons.utils.ServerTimeMark.Companion.ticks
 import kotlin.time.Duration

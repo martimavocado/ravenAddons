@@ -1,4 +1,4 @@
-package at.raven.ravenAddons.loadmodule
+package at.raven.ravenAddons.modules.loadModule
 
 import com.google.devtools.ksp.processing.SymbolProcessor
 import com.google.devtools.ksp.processing.SymbolProcessorEnvironment

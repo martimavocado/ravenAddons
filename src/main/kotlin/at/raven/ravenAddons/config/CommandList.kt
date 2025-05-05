@@ -4,7 +4,7 @@ import at.raven.ravenAddons.data.commands.CommandBuilder
 import at.raven.ravenAddons.data.commands.CommandCategory
 import at.raven.ravenAddons.data.commands.CommandManager.commandList
 import at.raven.ravenAddons.event.CommandRegistrationEvent
-import at.raven.ravenAddons.loadmodule.LoadModule
+import at.raven.ravenAddons.modules.loadModule.LoadModule
 import at.raven.ravenAddons.utils.ChatUtils
 import at.raven.ravenAddons.utils.ChatUtils.add
 import net.minecraft.event.ClickEvent

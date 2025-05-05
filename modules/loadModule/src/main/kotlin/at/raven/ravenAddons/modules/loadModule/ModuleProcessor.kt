@@ -1,6 +1,10 @@
-package at.raven.ravenAddons.loadmodule
+package at.raven.ravenAddons.modules.loadModule
 
-import com.google.devtools.ksp.processing.*
+import com.google.devtools.ksp.processing.CodeGenerator
+import com.google.devtools.ksp.processing.Dependencies
+import com.google.devtools.ksp.processing.KSPLogger
+import com.google.devtools.ksp.processing.Resolver
+import com.google.devtools.ksp.processing.SymbolProcessor
 import com.google.devtools.ksp.symbol.ClassKind
 import com.google.devtools.ksp.symbol.KSAnnotated
 import com.google.devtools.ksp.symbol.KSClassDeclaration
@@ -34,9 +38,9 @@ class ModuleProcessor(private val codeGenerator: CodeGenerator, private val logg
     private fun generateFile(symbols: List<KSClassDeclaration>) {
         val dependencies = symbols.mapNotNull { it.containingFile }.toTypedArray()
         val deps = Dependencies(true, *dependencies)
-        val file = codeGenerator.createNewFile(deps, "at.raven.ravenAddons.loadmodule", "LoadedModules")
+        val file = codeGenerator.createNewFile(deps, "at.raven.ravenAddons.modules.loadModule", "LoadedModules")
         OutputStreamWriter(file).use {
-            it.write("package at.raven.ravenAddons.loadmodule\n\n")
+            it.write("package at.raven.ravenAddons.modules.loadModule\n\n")
             it.write("object LoadedModules {\n")
             it.write("    val modules: List<Any> = listOf(\n")
             symbols.forEach { symbol ->

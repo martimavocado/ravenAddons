@@ -1,7 +1,7 @@
 package at.raven.ravenAddons.utils.render
 
 import at.raven.ravenAddons.event.render.WorldRenderEvent
-import at.raven.ravenAddons.loadmodule.LoadModule
+import at.raven.ravenAddons.modules.loadModule.LoadModule
 import at.raven.ravenAddons.ravenAddons
 import net.minecraft.client.Minecraft
 import net.minecraft.client.renderer.GlStateManager

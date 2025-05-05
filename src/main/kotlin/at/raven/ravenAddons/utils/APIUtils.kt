@@ -1,6 +1,6 @@
 package at.raven.ravenAddons.utils
 
-import at.raven.ravenAddons.loadmodule.LoadModule
+import at.raven.ravenAddons.modules.loadModule.LoadModule
 import at.raven.ravenAddons.ravenAddons
 import com.google.gson.*
 import java.net.URL

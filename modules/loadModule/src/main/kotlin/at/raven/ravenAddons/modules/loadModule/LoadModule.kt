@@ -1,4 +1,4 @@
-package at.raven.ravenAddons.loadmodule
+package at.raven.ravenAddons.modules.loadModule
 
 @Target(AnnotationTarget.CLASS)
 @Retention(AnnotationRetention.SOURCE)

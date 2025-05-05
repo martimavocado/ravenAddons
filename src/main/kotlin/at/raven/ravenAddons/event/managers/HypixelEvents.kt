@@ -3,7 +3,7 @@ package at.raven.ravenAddons.event.managers
 import at.raven.ravenAddons.event.hypixel.HypixelJoinEvent
 import at.raven.ravenAddons.event.hypixel.HypixelPartyEvent
 import at.raven.ravenAddons.event.hypixel.HypixelServerChangeEvent
-import at.raven.ravenAddons.loadmodule.LoadModule
+import at.raven.ravenAddons.modules.loadModule.LoadModule
 import net.hypixel.modapi.HypixelModAPI
 import net.hypixel.modapi.packet.impl.clientbound.ClientboundHelloPacket
 import net.hypixel.modapi.packet.impl.clientbound.ClientboundPartyInfoPacket

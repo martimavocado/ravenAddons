@@ -140,7 +140,7 @@ dependencies {
 
     shadowImpl(libs.libautoupdate)
 
-    compileOnly(ksp(project(":annotation-processors"))!!)
+    compileOnly(ksp(project(":loadModule"))!!)
 }
 
 tasks.withType(JavaCompile::class) {

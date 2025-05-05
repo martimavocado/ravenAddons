@@ -2,7 +2,7 @@
 .vscode/
 run/
 build/
-annotation-processors/build/
+processors/*/build/
 .gradle/
 .kotlin/
 

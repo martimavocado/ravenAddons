@@ -3,7 +3,7 @@ package at.raven.ravenAddons.data
 import at.raven.ravenAddons.event.DebugDataCollectionEvent
 import at.raven.ravenAddons.event.hypixel.HypixelGameSwitch
 import at.raven.ravenAddons.event.hypixel.HypixelServerChangeEvent
-import at.raven.ravenAddons.loadmodule.LoadModule
+import at.raven.ravenAddons.modules.loadModule.LoadModule
 import net.hypixel.data.type.GameType
 import net.minecraftforge.fml.common.eventhandler.EventPriority
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent

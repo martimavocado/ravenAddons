@@ -22,5 +22,7 @@ plugins {
     id("org.gradle.toolchains.foojay-resolver-convention") version("0.6.0")
 }
 
-include("annotation-processors")
+include("loadModule")
+project(":loadModule").projectDir = file("modules/loadModule")
+
 rootProject.name = "ravenAddons"

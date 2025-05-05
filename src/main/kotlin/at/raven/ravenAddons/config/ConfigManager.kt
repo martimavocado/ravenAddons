@@ -1,7 +1,7 @@
 package at.raven.ravenAddons.config
 
 import at.raven.ravenAddons.event.hypixel.HypixelJoinEvent
-import at.raven.ravenAddons.loadmodule.LoadModule
+import at.raven.ravenAddons.modules.loadModule.LoadModule
 import at.raven.ravenAddons.ravenAddons
 import at.raven.ravenAddons.utils.ChatUtils
 import at.raven.ravenAddons.utils.ChatUtils.add
