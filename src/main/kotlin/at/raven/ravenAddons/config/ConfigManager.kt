@@ -5,6 +5,7 @@ import at.raven.ravenAddons.modules.loadModule.LoadModule
 import at.raven.ravenAddons.ravenAddons
 import at.raven.ravenAddons.utils.ChatUtils
 import at.raven.ravenAddons.utils.ChatUtils.add
+import at.raven.ravenAddons.utils.TitleManager
 import kotlinx.coroutines.delay
 import net.minecraft.client.gui.GuiScreen
 import net.minecraft.event.ClickEvent
@@ -15,6 +16,7 @@ import java.io.BufferedReader
 import java.io.File
 import java.io.FileReader
 import kotlin.time.Duration.Companion.milliseconds
+import kotlin.time.Duration.Companion.seconds
 
 @LoadModule
 object ConfigManager {
@@ -59,6 +61,7 @@ object ConfigManager {
         }
     }
 
+    // this is terrible, if anyone has a better solution please do it
     private fun initConfigGui() {
         try {
             configGui = ravenAddonsConfig.gui()
@@ -73,13 +76,22 @@ object ConfigManager {
 
                 while (reader.readLine().also { line = it } != null) {
                     if (line?.contains("ravenAddonsConfig") == true && line.contains("java.lang.IllegalStateException: [Vigilance] ")) {
-                        storedError = line.substringAfter("java.lang.IllegalStateException: [Vigilance] ")
+                        storedError = line.substringAfter("ravenAddonsConfig: ")
                         break
                     }
                 }
                 reader.close()
 
-                storedError?.let { ChatUtils.chat(it) }
+                storedError?.let {
+                    ChatUtils.warning(it)
+                    TitleManager.setTitle(
+                        "§cravenAddons Config Error",
+                        storedError,
+                        10.seconds,
+                        0.seconds,
+                        0.seconds,
+                    )
+                }
             } catch (e: Throwable) {
                 ChatUtils.warning("Error reading log file.")
                 e.printStackTrace()
