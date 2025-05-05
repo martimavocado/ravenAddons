@@ -11,6 +11,9 @@ import net.minecraft.event.ClickEvent
 import net.minecraft.event.HoverEvent
 import net.minecraft.util.ChatComponentText
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent
+import java.io.BufferedReader
+import java.io.File
+import java.io.FileReader
 import kotlin.time.Duration.Companion.milliseconds
 
 @LoadModule
@@ -18,6 +21,9 @@ object ConfigManager {
     private var configGui: GuiScreen? = null
     private var wasModUpdated = ModUpdateStatus.NONE
     private var updateMessageSent = false
+
+    var configInitialized = false
+        private set
 
     @SubscribeEvent
     fun onHypixelJoin(event: HypixelJoinEvent) {
@@ -29,25 +35,55 @@ object ConfigManager {
         if (configGui == null) initConfig()
     }
 
+    private val logFile = File("logs/latest.log")
+
     private fun initConfig() {
         ConfigFixer
-
-        if (ravenAddonsConfig.configVersion < ravenAddons.modVersion) {
-            ravenAddonsConfig.configVersion = ravenAddons.modVersion
-            ravenAddonsConfig.markDirty()
-            wasModUpdated = ModUpdateStatus.UPDATED
-        } else if (ravenAddonsConfig.configVersion > ravenAddons.modVersion) {
-            ravenAddonsConfig.configVersion = ravenAddons.modVersion
-            ravenAddonsConfig.markDirty()
-            wasModUpdated = ModUpdateStatus.DOWNGRADED
-        }
 
         ravenAddons.runDelayed(150.milliseconds) {
             while (ravenAddons.mc.currentScreen != null) {
                 delay(50)
             }
 
+            initConfigGui()
+
+            if (ravenAddonsConfig.configVersion < ravenAddons.modVersion) {
+                ravenAddonsConfig.configVersion = ravenAddons.modVersion
+                ravenAddonsConfig.markDirty()
+                wasModUpdated = ModUpdateStatus.UPDATED
+            } else if (ravenAddonsConfig.configVersion > ravenAddons.modVersion) {
+                ravenAddonsConfig.configVersion = ravenAddons.modVersion
+                ravenAddonsConfig.markDirty()
+                wasModUpdated = ModUpdateStatus.DOWNGRADED
+            }
+        }
+    }
+
+    private fun initConfigGui() {
+        try {
             configGui = ravenAddonsConfig.gui()
+            configInitialized = true
+        } catch (_: Throwable) {
+            if (!logFile.exists()) return
+
+            try {
+                val reader = BufferedReader(FileReader(logFile))
+                var line: String?
+                var storedError: String? = null
+
+                while (reader.readLine().also { line = it } != null) {
+                    if (line?.contains("ravenAddonsConfig") == true && line.contains("java.lang.IllegalStateException: [Vigilance] ")) {
+                        storedError = line.substringAfter("java.lang.IllegalStateException: [Vigilance] ")
+                        break
+                    }
+                }
+                reader.close()
+
+                storedError?.let { ChatUtils.chat(it) }
+            } catch (e: Throwable) {
+                ChatUtils.warning("Error reading log file.")
+                e.printStackTrace()
+            }
         }
     }
 
